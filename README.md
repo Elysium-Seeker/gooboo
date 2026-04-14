@@ -3,7 +3,7 @@
 ![Hits](https://count.getloli.com/get/@gooboo?theme=booru-helltaker)
 
 ## 🌟 新特性 / New Features
-- **[2026.04.14]** 新增中文汉化支持。已接入基础环境并汉化了游戏基础界面的核心词汇。后续可在 `src/lang/zh.js` 与 `src/lang/zh/` 内继续完善翻译。
+- **[2026.04.14]** 中文汉化扩展：完成 zh 语言包结构对齐（含 `src/lang/zh.js` 与 `src/lang/zh/`），并对主界面、卡牌、货币、升级、遗物、标签、解锁等核心模块提供中文覆盖，未覆盖项自动回退英文，保证可用性与可维护性。
 
 ## Project setup
 Install dependencies
