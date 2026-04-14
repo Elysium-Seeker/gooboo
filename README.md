@@ -3,7 +3,7 @@
 ![Hits](https://count.getloli.com/get/@gooboo?theme=booru-helltaker)
 
 ## 🌟 新特性 / New Features
-- **[2026.04.14]** 中文汉化扩展：完成 zh 语言包结构对齐（含 `src/lang/zh.js` 与 `src/lang/zh/`），并对主界面、卡牌、货币、升级、遗物、标签、解锁等核心模块提供中文覆盖，未覆盖项自动回退英文，保证可用性与可维护性。
+- **[2026.04.14]** 中文汉化全量化：`src/lang/zh.js` 与 `src/lang/zh/` 已改为独立完整中文语言包，文件结构与 `en/de` 对齐，不再依赖英文回退；包含主界面、说明文本、卡牌、货币、升级、遗物、补丁说明等全量内容。
 
 ## Project setup
 Install dependencies
