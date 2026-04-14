@@ -1,5 +1,10 @@
 # Gooboo
 
+![Hits](https://count.getloli.com/get/@gooboo?theme=booru-helltaker)
+
+## 🌟 新特性 / New Features
+- **[2026.04.14]** 新增中文汉化支持。已接入基础环境并汉化了游戏基础界面的核心词汇。后续可在 `src/lang/zh.js` 与 `src/lang/zh/` 内继续完善翻译。
+
 ## Project setup
 Install dependencies
 ```

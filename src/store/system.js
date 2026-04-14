@@ -156,7 +156,7 @@ export default {
                         unlock: null,
                         hasDescription: false,
                         type: 'select',
-                        items: ['en', 'de'],
+                        items: ['en', 'de', 'zh'],
                         value: 'en',
                         defaultValue: 'en'
                     },
