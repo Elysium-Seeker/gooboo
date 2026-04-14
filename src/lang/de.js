@@ -1251,7 +1251,7 @@ export default {
       },
       timeSpeed: {
         name: 'Zeitgeschwindigkeit',
-        description: 'Multiplikator fuer den Zeitfortschritt im lokalen Spiel'
+        description: 'Multiplikator fuer den Zeitfortschritt im lokalen Spiel (1x-1000x)'
       },
       lang: {
         name: 'Sprache',

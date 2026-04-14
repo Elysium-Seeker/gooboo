@@ -1251,7 +1251,7 @@ export default {
       },
       timeSpeed: {
         name: 'Time speed',
-        description: 'Multiplier for in-game time progression in local play'
+        description: 'Multiplier for in-game time progression in local play (1x-1000x)'
       },
       lang: {
         name: 'Language',

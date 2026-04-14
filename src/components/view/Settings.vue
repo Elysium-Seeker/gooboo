@@ -30,6 +30,21 @@
           <setting-item class="ma-2" :category="tab" :name="key"></setting-item>
         </v-col>
       </v-row>
+      <div v-if="tab === 'general'" class="ma-2">
+        <div class="mb-2">{{ $vuetify.lang.t(`$vuetify.settings.general.timeSpeed.name`) }}: {{ currentTimeSpeed }}x</div>
+        <div class="d-flex flex-wrap">
+          <v-btn class="ma-1" small @click="setTimeSpeed(1)">1x</v-btn>
+          <v-btn class="ma-1" small @click="setTimeSpeed(2)">2x</v-btn>
+          <v-btn class="ma-1" small @click="setTimeSpeed(5)">5x</v-btn>
+          <v-btn class="ma-1" small @click="setTimeSpeed(10)">10x</v-btn>
+          <v-btn class="ma-1" small @click="setTimeSpeed(25)">25x</v-btn>
+          <v-btn class="ma-1" small @click="setTimeSpeed(50)">50x</v-btn>
+          <v-btn class="ma-1" small @click="setTimeSpeed(100)">100x</v-btn>
+          <v-btn class="ma-1" small @click="setTimeSpeed(250)">250x</v-btn>
+          <v-btn class="ma-1" small @click="setTimeSpeed(500)">500x</v-btn>
+          <v-btn class="ma-1" small @click="setTimeSpeed(1000)">1000x</v-btn>
+        </div>
+      </div>
       <div v-if="tab === 'experiment'" class="d-flex justify-center ma-2">
         <alert-text type="warning" style="max-width: 600px;">{{ $vuetify.lang.t(`$vuetify.settings.experiment.warning`) }}</alert-text>
       </div>
@@ -90,6 +105,16 @@ export default {
         }
       }
       return obj;
+    },
+    currentTimeSpeed() {
+      const settingSpeed = Number(this.$store.state.system.settings.general.items.timeSpeed.value);
+      const speed = !isNaN(settingSpeed) && settingSpeed > 0 ? settingSpeed : Number(this.$store.state.system.timeMult);
+      return Math.max(1, Math.min(1000, !isNaN(speed) ? speed : 1));
+    }
+  },
+  methods: {
+    setTimeSpeed(speed) {
+      this.$store.dispatch('system/updateSetting', {category: 'general', name: 'timeSpeed', value: speed});
     }
   },
   destroyed() {

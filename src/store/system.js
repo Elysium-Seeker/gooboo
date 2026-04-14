@@ -157,7 +157,7 @@ export default {
                         hasDescription: true,
                         type: 'number',
                         min: 1,
-                        max: 100,
+                        max: 1000,
                         step: 1,
                         suffix: 'x',
                         value: 1,
@@ -935,7 +935,7 @@ export default {
             const payload = {...o};
             if (payload.category === 'general' && payload.name === 'timeSpeed') {
                 const parsedSpeed = Number(payload.value);
-                payload.value = !isNaN(parsedSpeed) ? Math.max(1, Math.min(100, parsedSpeed)) : 1;
+                payload.value = !isNaN(parsedSpeed) ? Math.max(1, Math.min(1000, parsedSpeed)) : 1;
             }
 
             commit('updateSetting', payload);

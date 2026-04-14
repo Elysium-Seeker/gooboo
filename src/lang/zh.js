@@ -1136,7 +1136,7 @@ export default {
       },
       timeSpeed: {
         name: '时间倍速',
-        description: '本地游玩时游戏内时间推进的倍率'
+        description: '本地游玩时游戏内时间推进的倍率（1x-1000x）'
       },
       lang: {
         name: '语言',
