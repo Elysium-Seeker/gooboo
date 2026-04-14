@@ -385,8 +385,11 @@ function loadFile(file) {
         }
     });
 
-    if (save.timeMult) {
-        store.commit('system/updateKey', {key: 'timeMult', value: save.timeMult});
+    const savedTimeSpeed = save.timeMult ?? store.state.system.settings.general.items.timeSpeed?.value ?? 1;
+    const normalizedTimeSpeed = Math.max(1, Math.min(100, Number(savedTimeSpeed) || 1));
+    store.commit('system/updateKey', {key: 'timeMult', value: normalizedTimeSpeed});
+    if (store.state.system.settings.general.items.timeSpeed !== undefined) {
+        store.commit('system/updateSetting', {category: 'general', name: 'timeSpeed', value: normalizedTimeSpeed});
     }
 
     // Update currency mults

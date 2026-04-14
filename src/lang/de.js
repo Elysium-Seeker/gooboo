@@ -1249,6 +1249,10 @@ export default {
       autosaveTimer: {
         name: 'Automatisch speichern'
       },
+      timeSpeed: {
+        name: 'Zeitgeschwindigkeit',
+        description: 'Multiplikator fuer den Zeitfortschritt im lokalen Spiel'
+      },
       lang: {
         name: 'Sprache',
         en: 'English',

@@ -1134,6 +1134,10 @@ export default {
       autosaveTimer: {
         name: '自动保存'
       },
+      timeSpeed: {
+        name: '时间倍速',
+        description: '本地游玩时游戏内时间推进的倍率'
+      },
       lang: {
         name: '语言',
         zh: '简体中文',

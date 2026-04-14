@@ -152,6 +152,17 @@ export default {
                         defaultValue: 30,
                         clearable: true
                     },
+                    timeSpeed: {
+                        unlock: null,
+                        hasDescription: true,
+                        type: 'number',
+                        min: 1,
+                        max: 100,
+                        step: 1,
+                        suffix: 'x',
+                        value: 1,
+                        defaultValue: 1
+                    },
                     lang: {
                         unlock: null,
                         hasDescription: false,
@@ -921,9 +932,18 @@ export default {
             }
         },
         updateSetting({ commit, dispatch }, o) {
-            commit('updateSetting', o);
+            const payload = {...o};
+            if (payload.category === 'general' && payload.name === 'timeSpeed') {
+                const parsedSpeed = Number(payload.value);
+                payload.value = !isNaN(parsedSpeed) ? Math.max(1, Math.min(100, parsedSpeed)) : 1;
+            }
+
+            commit('updateSetting', payload);
             if (o.category === 'general' && o.name === 'autosaveTimer') {
                 commit('resetAutosaveTimer');
+            }
+            if (payload.category === 'general' && payload.name === 'timeSpeed') {
+                commit('updateKey', {key: 'timeMult', value: payload.value});
             }
             if (o.category === 'general' && o.name === 'lang') {
                 commit('mult/clearCache', null, {root: true});
